@@ -61,3 +61,12 @@ while ((line = get_next_line(fd)) != NULL)
 }
 close(fd);
 ```
+
+## Concepts & Learning Goals
+
+- Mastering file descriptor operations and buffered I/O
+- Understanding and managing dynamic memory allocation in C
+- Working with static variables to preserve function state between calls
+- Implementing efficient line-by-line reading without loading the entire file
+- Handling edge cases in file input (e.g., EOF, empty lines, no newline at EOF)
+- Writing clean, modular, and testable C code
