@@ -20,33 +20,24 @@ char *get_next_line(int fd);
 - Must compile with and without the -D BUFFER_SIZE=n flag.
 - Allowed functions: read(), malloc(), free().
 
-Key Concepts
+## Key Concepts & Learning Goals
 
-- Uses a static variable to preserve reading state between function calls.
-- Efficient memory management using malloc and free.
-- Uses the read() system call with a buffer of defined size.
+- Mastering file descriptor operations and buffered I/O
+- Understanding and managing dynamic memory allocation in C
+- Working with static variables to preserve function state between calls
+- Implementing efficient line-by-line reading without loading the entire file
+- Handling edge cases in file input (e.g., EOF, empty lines, no newline at EOF)
+- Writing clean, modular, and testable C code
 
-Compilation
+## Compilation
 
 To compile the project:
-
 
 ```bash
 cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 get_next_line.c get_next_line_utils.c
 ```
 
 You can adjust BUFFER_SIZE to test different performance and behavior cases.
-
-## Files
-
-- get_next_line.c: Core implementation of the function.
-- get_next_line_utils.c: Helper functions used by get_next_line.
-- get_next_line.h: Header file with the function prototype and necessary includes.
-
-## Bonus
-
-- Handles multiple file descriptors simultaneously.
-- Maintains a separate reading state for each file descriptor using only one static variable.
 
 ## Example Usage
 
@@ -62,11 +53,13 @@ while ((line = get_next_line(fd)) != NULL)
 close(fd);
 ```
 
-## Concepts & Learning Goals
+## Files
 
-- Mastering file descriptor operations and buffered I/O
-- Understanding and managing dynamic memory allocation in C
-- Working with static variables to preserve function state between calls
-- Implementing efficient line-by-line reading without loading the entire file
-- Handling edge cases in file input (e.g., EOF, empty lines, no newline at EOF)
-- Writing clean, modular, and testable C code
+- get_next_line.c: Core implementation of the function.
+- get_next_line_utils.c: Helper functions used by get_next_line.
+- get_next_line.h: Header file with the function prototype and necessary includes.
+
+## Bonus
+
+- Handles multiple file descriptors simultaneously.
+- Maintains a separate reading state for each file descriptor using only one static variable.
